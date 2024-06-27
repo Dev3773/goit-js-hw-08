@@ -64,3 +64,54 @@ const images = [
   },
 ];
 
+const container = document.querySelector(".gallery");
+container.insertAdjacentHTML("beforeend", createMurcup(images));
+
+// function handleModalOpen(event) {
+
+  function createMurcup(arr) {
+    return arr.map(({ preview, original, description }) => `
+    <li class="gallery-item">
+  <a class="gallery-link" href="large-image.jpg">
+    <img
+      class="gallery-image"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
+    />
+  </a>
+</li>`
+    ).join("");
+}
+
+// Отменяем слушатель событий
+const galleryItems = document.querySelectorAll(".gallery-item");
+galleryItems.forEach(item => {
+  item.addEventListener("click", event => event.preventDefault());
+});
+
+
+
+
+// } 
+
+
+
+
+// const createMurcup = images.map(({ preview, original, description }) =>
+//  `
+//     <li class="gallery-item">
+//   <a class="gallery-link" href="large-image.jpg">
+//     <img
+//       class="gallery-image"
+//       src="${preview}"
+//       data-source="${original}"
+//       alt="${description}"
+//     />
+//   </a>
+// </li>
+// `
+//     ).join("");
+
+
+// container.insertAdjacentHTML("beforeend", createMurcup);
