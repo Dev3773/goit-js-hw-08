@@ -19,6 +19,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+  
+body {
+  background-color: #F5F5F5;
+}
 
 .gallery {
   display: flex;
@@ -45,6 +49,19 @@ img {
 .gallery-image:hover {
   transform: scale(1.05);
 } 
+
+.modal {
+display: flex;
+justify-content: center;
+align-items: center;
+
+width: 1112px;
+height: 640px;
+
+background-color: rgba(46, 47, 66, 0.8);
+}
+
+
 
 
 
