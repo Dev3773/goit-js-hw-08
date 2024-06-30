@@ -93,8 +93,6 @@ function handleModalOpen(event) {
   const currentId = currentProduct.dataset.source;
   const product = images.find(({ original }) => original === currentId);
 
-  console.log(product);
-
   const instance = basicLightbox.create(`
     <div class="modal">
   <img src="${product.original}" alt="${product.description}">
@@ -103,4 +101,3 @@ function handleModalOpen(event) {
   instance.show();
 }
 
- 
