@@ -64,40 +64,40 @@ const images = [
   },
 ];
 
-const container = document.querySelector(".gallery");
-container.insertAdjacentHTML("beforeend", createMurcup(images));
+// const container = document.querySelector(".gallery");
+// container.insertAdjacentHTML("beforeend", createMurcup(images));
 
-function createMurcup(arr) {
-    return arr.map(({ preview, original, description }) => `
-    <li class="gallery-item">
-  <a class="gallery-link" href="large-image.jpg">
-    <img
-      class="gallery-image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
-</li>`
-    ).join("");
-}
+// function createMurcup(arr) {
+//     return arr.map(({ preview, original, description }) => `
+//     <li class="gallery-item">
+//   <a class="gallery-link" href="large-image.jpg">
+//     <img
+//       class="gallery-image"
+//       src="${preview}"
+//       data-source="${original}"
+//       alt="${description}"
+//     />
+//   </a>
+// </li>`
+//     ).join("");
+// }
 
-container.addEventListener("click", handleModalOpen);
+// container.addEventListener("click", handleModalOpen);
 
-function handleModalOpen(event) {
-  event.preventDefault();
+// function handleModalOpen(event) {
+//   event.preventDefault();
 
-  if (event.currentTarget === event.target) return;
+//   if (event.currentTarget === event.target) return;
 
-  const currentProduct = event.target.closest(".gallery-image");
-  const currentId = currentProduct.dataset.source;
-  const product = images.find(({ original }) => original === currentId);
+//   const currentProduct = event.target.closest(".gallery-image");
+//   const currentId = currentProduct.dataset.source;
+//   const product = images.find(({ original }) => original === currentId);
 
-  const instance = basicLightbox.create(`
-    <div class="modal">
-  <img src="${product.original}" alt="${product.description}">
-</div>
-  `);
-  instance.show();
-}
+//   const instance = basicLightbox.create(`
+//     <div class="modal">
+//   <img src="${product.original}" alt="${product.description}">
+// </div>
+//   `);
+//   instance.show();
+// }
 
